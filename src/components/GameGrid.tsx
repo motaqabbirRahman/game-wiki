@@ -1,29 +1,9 @@
-import React, { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
-import { Alert, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
+import useGames from "../hooks/useGames";
 
 const GameGrid = () => {
-  interface FetchGamesResponse {
-    count: number;
-    results: Game[];
-  }
-  interface Game {
-    id: number;
-    name: string;
-  }
-  const [games, setGames] = useState<Game[]>([]);
-  const [error, setError] = useState();
-
-  useEffect(() => {
-    apiClient<FetchGamesResponse>("/games")
-      .then((res) => {
-        setGames(res.data.results);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
-  }, []);
-
+  //where do I destucture it ?
+  const { games, error } = useGames();
   return (
     <>
       {error && <Text>{error}</Text>}
