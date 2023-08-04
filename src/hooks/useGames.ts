@@ -6,9 +6,11 @@ interface FetchGamesResponse {
   count: number;
   results: Game[];
 }
-interface Game {
+
+export interface Game {
   id: number;
   name: string;
+  background_image: string;
 }
 
 const useGames = () => {

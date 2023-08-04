@@ -2,6 +2,7 @@ import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import ColorModeSwitch from "./components/ColorModeSwitch";
 import GameGrid from "./components/GameGrid";
+import GameCard from "./components/GameCard";
 
 function App() {
   return (
