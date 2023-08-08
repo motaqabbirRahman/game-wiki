@@ -15,6 +15,7 @@ export interface Game {
   //each object has a property called platform
   parent_platforms: { platform: Platform }[];
   // [{platform : {id: , name: , slug: } }]
+  metacritic: number;
 }
 
 export interface Platform {
