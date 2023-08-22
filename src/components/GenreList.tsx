@@ -1,5 +1,6 @@
 import {
   Button,
+  Flex,
   HStack,
   Heading,
   Image,
@@ -20,21 +21,8 @@ interface Props {
 
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
-  const listDummy = [1, 2, 3, 4, 5, 6, 7, 8];
 
-  if (isLoading)
-    return (
-      <List>
-        {listDummy.map((element: number) => (
-          <ListItem key={element}>
-            <HStack>
-              <Skeleton height="32px" width="32px" />
-              <SkeletonText />
-            </HStack>
-          </ListItem>
-        ))}
-      </List>
-    );
+  if (isLoading) return <Spinner></Spinner>;
   return (
     <>
       <Heading fontSize="2xl">Genres</Heading>
